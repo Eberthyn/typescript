@@ -5,7 +5,7 @@ export abstract class View<T> {
     this.elemento = document.querySelector(seletor);
   }
 
-  abstract template(
+  protected abstract template(
     model: T
   ): string; /*método abstrato obriga a implementação do template na classe filha*/
 
