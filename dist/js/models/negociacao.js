@@ -5,14 +5,13 @@ export class Negociacao {
         this.valor = valor;
     }
     get data() {
-        const data = new Date(this._data.getTime()); /*Proteção contra manipulação da data (na lista) pelo método setDate*/
+        const data = new Date(this._data.getTime());
         return data;
     }
     get volume() {
         return this.quantidade * this.valor;
     }
     static criaDe(dataString, quantidadeString, valorString) {
-        /* Static Métodos estáticos podem ser acessados diretamente pela classe sem precisarmos de uma instância (const) desta mesma classe*/
         const exp = /-/g;
         const data = new Date(dataString.replace(exp, ","));
         const quantidade = parseInt(quantidadeString);
